@@ -5,6 +5,10 @@
         <router-link :to="link.to">{{ link.name }}</router-link>
       </li>
     </ul>
+    <img src="/static/192.png"/>
+    <video width="400" controls>
+  <source src="/static/test.mp4" type="video/mp4">
+</video>
     <main>
       <router-view/>
     </main>

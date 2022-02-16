@@ -1,7 +1,7 @@
 {
   "name": "pwa-vue-app-1",
   "version": "1.0.0",
-  "description": "",
+  "description": "xxx",
   "main": "index.js",
   "scripts": {
     "build": "webpack -p --mode production",
@@ -36,6 +36,7 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "pouchdb": "^7.2.2",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3"
   }
