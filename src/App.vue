@@ -44,7 +44,7 @@ li a:hover {
 <script>
 import axios from "axios";
 import * as PouchDB from "pouchdb/dist/pouchdb";
-const db = new PouchDB("sample");
+let db = new PouchDB("sample");
 export default {
   mounted() {
     const self = this;
@@ -63,17 +63,18 @@ export default {
   methods: {
     downloadItem() {
       const url =
-        "https://static.videezy.com/system/resources/previews/000/045/482/original/20_14_02.mp4 ";
+        "https://static.videezy.com/system/resources/previews/000/000/080/original/CoffeeCup.mp4";
       axios
         .get(url, { responseType: "blob" })
-        .then((response) => {
+        .then(async (response) => {
           const blob = new Blob([response.data], { type: "video/mp4" });
           // const link = document.createElement("a");
           // link.href = URL.createObjectURL(blob);
           // link.download = "label";
           // link.click();
           // URL.revokeObjectURL(link.href);
-
+          await db.destroy();
+          db = new PouchDB("sample");
           db.put({
             _id: "image",
             _attachments: {
