@@ -9,8 +9,11 @@
     <video v-if="blobFile" width="400" controls>
       <source :src="blobFile" type="video/mp4" />
     </video>
-    <button v-text="'click'" @click.prevent="downloadItem" />
-    <p>{{ status }}</p>
+    <a
+      href="https://kamilgawron.pl/testvideo.mp4"
+      v-text="'click'"
+      @click.prevent="downloadItem"
+    />
     <main>
       <router-view />
     </main>
@@ -47,7 +50,7 @@ export default {
     const self = this;
     db.getAttachment("image", "file")
       .then(function (blobOrBuffer) {
-        console.log("🚀get blob", blobOrBuffer);
+        console.log("🚀get blob", blobOrBuffer)
         if (blobOrBuffer) {
           const link = document.createElement("a");
           link.href = URL.createObjectURL(blobOrBuffer);
@@ -60,9 +63,8 @@ export default {
   },
   methods: {
     downloadItem() {
-      this.status = "pending";
-      const url = "./test2.mp4";
-      const self = this;
+      const url =
+        "./test2.mp4";
       axios
         .get(url, { responseType: "blob" })
         .then(async (response) => {
@@ -85,11 +87,8 @@ export default {
           })
             .then(function (res) {
               console.log("save to db");
-              self.status = "ready";
             })
             .catch(function (err) {
-              self.status = "err";
-
               console.log(err);
             });
         })
@@ -97,7 +96,6 @@ export default {
     },
   },
   data: () => ({
-    status: "idle",
     blobFile: null,
     links: [
       {
