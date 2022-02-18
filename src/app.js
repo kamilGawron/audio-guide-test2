@@ -7,7 +7,7 @@ Vue.config.productionTip = false;
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('/service-worker-cache.js')
+    .register('./service-worker-cache.js')
     .then(() => {
       console.log('Service Worker Registered')
     })

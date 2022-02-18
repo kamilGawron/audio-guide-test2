@@ -13,6 +13,7 @@
     <main>
       <router-view />
       <p>{{ requestStatus }}</p>
+      <p>test change kamilgawron.pl</p>
       <p>sw change test 18.02 21:28</p>
     </main>
   </div>
