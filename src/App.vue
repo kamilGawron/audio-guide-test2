@@ -63,7 +63,7 @@ export default {
   methods: {
     downloadItem() {
       const url =
-        "src/assets/videotest.mp4";
+        "./videotest.mp4";
       axios
         .get(url, { responseType: "blob" })
         .then(async (response) => {
