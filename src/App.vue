@@ -64,7 +64,7 @@ export default {
   methods: {
     downloadItem() {
       const url =
-        "./videotest.mp4";
+        "./test2.mp4";
       axios
         .get(url, { responseType: "blob" })
         .then(async (response) => {
