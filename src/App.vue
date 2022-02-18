@@ -10,7 +10,7 @@
       <source :src="blobFile" type="video/mp4" />
     </video>
     <a
-      href="https://static.videezy.com/system/resources/previews/000/045/482/original/20_14_02.mp4"
+      href="https://kamilgawron.pl/testvideo.mp4"
       v-text="'click'"
       @click.prevent="downloadItem"
     />
@@ -63,7 +63,7 @@ export default {
   methods: {
     downloadItem() {
       const url =
-        "https://static.videezy.com/system/resources/previews/000/000/080/original/CoffeeCup.mp4";
+        "src/assets/videotest.mp4";
       axios
         .get(url, { responseType: "blob" })
         .then(async (response) => {

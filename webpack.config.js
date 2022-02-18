@@ -36,6 +36,17 @@ module.exports = (env, argv) => ({
           'css-loader'
         ],
         exclude: /\.module\.css$/
+      },
+      {
+        test: /\.(mov|mp4)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }  
+          }
+        ]
       }
     ]
   },
