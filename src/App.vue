@@ -95,7 +95,7 @@ export default {
     },
   },
   data: () => ({
-    blobFile: null,
+    blobFile: "./videotest.mp4",
     links: [
       {
         name: "Home",
