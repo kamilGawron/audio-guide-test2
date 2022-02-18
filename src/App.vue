@@ -9,13 +9,10 @@
     <video v-if="blobFile" width="400" controls>
       <source :src="blobFile" type="video/mp4" />
     </video>
-    <a
-      href="https://kamilgawron.pl/testvideo.mp4"
-      v-text="'click'"
-      @click.prevent="downloadItem"
-    />
+    <button v-text="'click'" @click.prevent="downloadItem" />
     <main>
       <router-view />
+      <p>{{ requestStatus }}</p>
     </main>
   </div>
 </template>
@@ -62,8 +59,9 @@ export default {
   },
   methods: {
     downloadItem() {
-      const url =
-        "src/assets/videotest.mp4";
+      this.requestStatus = "pending";
+      const self = this;
+      const url = "./videotest.mp4";
       axios
         .get(url, { responseType: "blob" })
         .then(async (response) => {
@@ -86,15 +84,18 @@ export default {
           })
             .then(function (res) {
               console.log("save to db");
+              self.requestStatus = "ready";
             })
             .catch(function (err) {
               console.log(err);
+              self.requestStatus = "err";
             });
         })
         .catch(console.error);
     },
   },
   data: () => ({
+    requestStatus: "idle",
     blobFile: null,
     links: [
       {
