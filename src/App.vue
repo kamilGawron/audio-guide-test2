@@ -11,8 +11,6 @@
     </video>
     <button v-text="'click'" @click.prevent="downloadItem" />
     <p>{{ status }}</p>
-    <p>sample text sw test</p>
-
     <main>
       <router-view />
     </main>
