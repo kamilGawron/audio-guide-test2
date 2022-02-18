@@ -50,7 +50,6 @@ export default {
     const self = this;
     db.getAttachment("image", "file")
       .then(function (blobOrBuffer) {
-        console.log("🚀get blob", blobOrBuffer)
         if (blobOrBuffer) {
           const link = document.createElement("a");
           link.href = URL.createObjectURL(blobOrBuffer);
@@ -96,7 +95,7 @@ export default {
     },
   },
   data: () => ({
-    blobFile: null,
+    blobFile: "./videotest.mp4",
     links: [
       {
         name: "Home",
