@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import video_1 from './assets/videotest.mp4';
+require('./styles/main.scss')
 
 Vue.config.productionTip = false;
 

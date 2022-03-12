@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-// Page content
-import Page1 from '@/components/Page1'
-import Home from '@/components/Home'
+import MainPage from '@/components/MainPage'
 
 // Fallback page
 import PageNotFound from '@/components/PageNotFound'
@@ -15,17 +13,7 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: MainPage
     },
-    {
-      path: '/page-1',
-      name: 'Page 1',
-      component: Page1
-    },
-    {
-      path: '**',
-      name: 'PageNotFound',
-      component: PageNotFound
-    }
   ]
 })
