@@ -1,2 +1,10 @@
-body {
+.o-mainPage {
+  &__video {
+    object-fit: fit;
+    max-width: 100%;
+  }
+  &__videosContainer {
+    max-width: 98%;
+    margin: 0 auto;
+  }
 }

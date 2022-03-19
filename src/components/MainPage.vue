@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <div v-for="videoLink in videoLinks">
-      <video width="400" controls>
-        <source :src="videoLink" type="video/mp4" />
-      </video>
+  <div class="o-mainPage">
+    <div class="o-mainPage__videosContainer">
+      <div v-for="videoLink in videoLinks">
+        <video class="o-mainPage__video" controls controlsList="nodownload">
+          <source :src="videoLink" type="video/mp4" />
+        </video>
+      </div>
     </div>
 
     <button v-text="'click'" @click.prevent="downloadItems" />
@@ -47,7 +49,7 @@ export default {
 
       const promises = this.fileNames.map((fileName) => {
         return new Promise(async (resolve, reject) => {
-          const fileData = await axios.get(`./${fileName}.mp4`, {
+          const fileData = await axios.get(`./videos/${fileName}.mp4`, {
             responseType: "blob",
           });
           resolve({
@@ -81,7 +83,18 @@ export default {
   },
   data: () => ({
     videoLinks: null,
-    fileNames: ["videotest", "park"],
+    fileNames: [
+      "videotest",
+      "park",
+      "park1",
+      "park2",
+      "park3",
+      "park4",
+      "park5",
+      "park6",
+      "park7",
+      "park8",
+    ],
     requestStatus: "idle",
   }),
 };
