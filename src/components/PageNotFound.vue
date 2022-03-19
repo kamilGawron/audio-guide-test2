@@ -6,9 +6,8 @@
 
 <style scoped>
 h1 {
-  color: red
+  color: red;
 }
 </style>
 
-<script>
-</script>
+<script></script>

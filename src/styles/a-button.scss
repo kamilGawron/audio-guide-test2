@@ -1,0 +1,13 @@
+.a-button{
+    outline: none;
+    background: none;
+    border:1px solid #000;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all .4s ease;
+    &:hover{
+        background-color: #000;
+        color: #fff
+    }
+
+}

@@ -1,0 +1,39 @@
+.o-modal{
+    &__wrapper{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 50;
+        background-color: rgba(0,0,0,.5);
+        top:0;
+        left:0;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__dialog{
+        border:1px solid rgba(33,33,33,.7);
+        border-radius: 10px;
+        min-width:320px;
+        max-width:80vw;
+        background-color: #fff;
+        padding: 10px;
+    }
+    &__header{
+        position: relative;
+    }
+    &__title{
+        padding:0;
+        margin: 10px;
+        text-align: center;
+    }
+    &__close{
+       position: absolute;
+       right: 10px;
+       top:0px;
+       cursor: pointer;
+    }
+    &__divider{
+        border-top:1px solid rgba(133,133,133,.2)
+    }
+}
